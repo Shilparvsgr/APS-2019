@@ -27,4 +27,5 @@ int main()
 
 
     printf("Number of subsets is %d ",result[sum]);
+    return 0;
 }

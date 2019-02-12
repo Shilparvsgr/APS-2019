@@ -1,0 +1,29 @@
+#include<stdio.h>
+/*Program to find fibonacci series using dynamic programming*/
+
+int fib(int n){
+    int i,f[n+2];
+    //0th fibonacci number is 0
+    if(n==0)
+        return 0;
+    // 1th fibonacci number is 1
+    if(n==1)
+        return 1;
+    f[0]=0;
+    f[1]=1;
+
+    for(i=2;i<n+1;i++){
+        f[i]=f[i-1]+f[i-2];
+    }
+    return f[n];
+}
+int main()
+{
+    int n;
+    int fib_num;
+    printf("Enter the nth number in fibonacci series ");
+    scanf("%d",&n);
+    fib_num=fib(n);
+    printf("%d th number in fibonacci series is %d",n,fib_num);
+    return 0;
+}

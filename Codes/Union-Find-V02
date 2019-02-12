@@ -1,0 +1,55 @@
+#include<stdio.h>
+#define N 10
+int A[N];
+//Tree representation
+int root(int a)
+{
+    while(A[a]!=a)
+        a=A[a];
+    return a;
+}
+
+//change value in index a with root of b
+void Union(int a ,int b)
+{
+    int a_val,b_val;
+    a_val=root(a);
+    b_val=root(b);
+    A[a_val]=b_val;
+}
+
+//if both root of a and b matches then cyclic
+int Find(int a , int b)
+{
+    if(root(a)==root(b))
+        return 1;
+    return 0;
+}
+int main()
+{
+    int i,flag;
+     //initialize all elements to value of their respective index;
+     for(i=0;i<N;i++)
+        A[i]=i;
+
+    Union(7,2);
+    Union(2,0);
+    Union(9,7);
+    Union(9,0);
+
+    for(i=0;i<N;i++){
+        printf("%d ",A[i]);
+    }
+
+    printf("\n");
+
+    //flag is 1 here (cyclic)
+    flag=Find(7,9);
+
+
+    if(flag==1)
+        printf("Cyclic");
+    else
+        printf("Acyclic");
+    return 0;
+}

@@ -7,6 +7,6 @@
 •	The disadvantage is that, if several binomial coefficients are to be calculated, the recursive function should be called for each 
   computation reducing time efficiency.
 •	The dynamic programming approach using 1D array, every element of array has some value and in next iteration value for those elements
-  comes from previous iteration C[j]=C[j]+C[j+1] thus reducing space used compared to 2D and efficiency turns up to be O(k).
+  comes from previous iteration C[j]=C[j]+C[j-1] thus reducing space used compared to 2D and efficiency turns up to be O(k).
 •	If only the final binomial coefficient is required, then the 1D approach is most suitable one, but if some intermediate values are 
   needed then 2D approach is best.

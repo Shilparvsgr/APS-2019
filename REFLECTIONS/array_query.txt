@@ -1,0 +1,26 @@
+The algorithms used for array query problems are:
+Kadane's Algorithm:
+For Example:It is used to find maximum sum subarray in an array.
+It's efficiency is O(n).
+But if there are 10^9 elements, this technique becomes time inefficient.
+
+LookUp Table Technique:
+It uses memory space of n*n bytes and efficiency is O(n*n) and fetch time is O(1).
+The memory utilization is more  compared to others since 2D matrix is constructed for a given array.
+
+Square-Root Decomposition:
+It builds a 1D array of size=square_root(size of original array) thus reducing memory usage.The processing time is O(n)
+and fetch time is the O(square_root(n)) where n is the size of the original array.
+But, if a query is given to find the minimum element whose range is between 2 blocks of the table but doesn't cover complete range , 
+then search occurs manually lowering its effiency.
+
+Segment Tree:
+It is more likely a strictly binary tree
+It is built in recursive manner in a bottom-up approach.
+The no of comparisions occuring is log(n) and efficiency turns out to be O(log(n))
+The drawback is that tree structure cannot be changed and if some value changes then the tree should be rebuilt
+In that case, for dynamic values previously mentioned algorithms are efficient.
+
+
+
+
